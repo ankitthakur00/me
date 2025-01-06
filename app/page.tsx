@@ -21,7 +21,7 @@ export default async function Home() {
             Software engineer based in Bengaluru, India.
           </span>
         </h1>
-        <p className="text-slate-360 text-lg md:text-xl leading-normal">
+        <p className="text-slate-360 text-lg md:text-md leading-normal">
           I specialize in blending engineering expertise with strategic insight to help businesses design and enhance their software solutions.
 
           With over four years of experience in software development, 
