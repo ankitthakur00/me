@@ -28,14 +28,14 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     creator: '@ankitthakur00',
-    images: ['/log2.png'],
+    images: ['/me/logo2.png'],
     title: 'Ankit Kumar - Software Engineer',
   },
   openGraph: {
     title: 'Ankit Kumar - Software Engineer',
     images: [
       {
-        url: '/logo2.png',
+        url: '/me/logo2.png',
         width: 1200,
         height: 630,
         alt: 'Ankit Kumar - Software Engineer',
@@ -84,7 +84,7 @@ export default function RootLayout({
           <header className="pt-8 md:pt-16 pb-16 px-4 md:px-0 flex justify-between">
             <Link href="/">
               <Image 
-                src="/logo2.png" 
+                src="/me/logo2.png" 
                 alt="AK" 
                 width={64}
                 height={64}
