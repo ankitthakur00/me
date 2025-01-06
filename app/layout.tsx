@@ -10,6 +10,7 @@ import Image from 'next/image';
 import nextConfig from '../next.config.mjs';
 
 import clsx from 'clsx';
+import { getImagePath } from '@/lib/images';
 
 const SaansFont = localFont({
   src: './saans-font.woff2',
@@ -85,7 +86,7 @@ export default function RootLayout({
           <header className="pt-8 md:pt-16 pb-16 px-4 md:px-0 flex justify-between">
             <Link href="/">
               <Image 
-                src={`${nextConfig.basePath}/logo2.png`}
+                src={getImagePath('logo2.png')}
                 alt="AK" 
                 width={64}
                 height={64}

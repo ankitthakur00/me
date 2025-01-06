@@ -2,7 +2,7 @@ import { PageHeader } from '@/app/components/page-header';
 import { Title } from '@/app/components/title';
 import Image from 'next/image';
 import Link from 'next/link';
-import nextConfig from '../../../next.config.mjs';
+import { getImagePath } from '@/lib/images';
 
 const experience: {
   company: string;
@@ -14,19 +14,19 @@ const experience: {
     company: 'OpenText',
     role: 'Software Engineer 2',
     date: 'January 2024 → Present',
-    logo: `${nextConfig.basePath}/opentext.png`,
+    logo: getImagePath('opentext.png'),
   },
   {
     company: 'Epsilon',
     role: 'Software Engineer 1/2',
     date: 'January 2021 → January 2024',
-    logo: `${nextConfig.basePath}/epsilon.png`,
+    logo: getImagePath('epsilon.png'),
   },
   {
     company: 'KLA + ',
     role: 'Software Engineer Intern',
     date: 'May 2020 → Jun 2020',
-    logo: `${nextConfig.basePath}/kla.png`,
+    logo: getImagePath('kla.png'),
   },
 ];
 
