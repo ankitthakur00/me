@@ -2,6 +2,7 @@
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
+import Image from 'next/image';
 
 export function ContainerQueryDemo() {
   return (
@@ -9,9 +10,11 @@ export function ContainerQueryDemo() {
       <Panel defaultSize={30} minSize={20}>
         <div className={clsx(styles.cardContainer, 'resize')}>
           <div className={clsx(styles.card, 'bg-white border rounded-lg p-4')}>
-            <img
+            <Image
               src="/posts/2024-09-23-future-css-container-queries/placeholder.jpeg"
               alt="Sample Image"
+              width={400}
+              height={256}
               className="object-cover w-full h-32 rounded-lg m-0 p-0"
             />
             <div className="content">

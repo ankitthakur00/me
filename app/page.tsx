@@ -16,12 +16,12 @@ export default async function Home() {
     <main className="px-4 md:px-0">
       <section className="pb-14 border-b border-slate-300 mb-14">
         <h1 className="font-semibold text-4xl mb-4 text-white">
-          Hi, I'm Ankit.
+          Hi, I&apos;m Ankit.
           <span className="block text-slate-500 font-normal text-2xl">
             Software engineer based in Bengaluru, India.
           </span>
         </h1>
-        <p className="text-slate-300 text-lg md:text-xl leading-normal">
+        <p className="text-slate-360 text-lg md:text-xl leading-normal">
           I specialize in blending engineering expertise with strategic insight to help businesses design and enhance their software solutions.
 
           With over four years of experience in software development, 
@@ -35,7 +35,7 @@ export default async function Home() {
         >
           More Information{' '}
           <span className="inline-block group-hover:translate-x-2 transition-transform">
-            →
+            &rarr;
           </span>
         </Link>
         <Link
@@ -45,7 +45,7 @@ export default async function Home() {
         >
           Read CV{' '}
           <span className="inline-block group-hover:translate-y-0.5 transition-transform">
-            ↓
+            &darr;
           </span>
         </Link>
       </section>
@@ -74,7 +74,7 @@ export default async function Home() {
         >
           View More Posts{' '}
           <span className="inline-block group-hover:translate-x-2 group-hover:-translate-y-0.5 transition-transform">
-            →
+            &rarr;
           </span>
         </Link>
       </section>

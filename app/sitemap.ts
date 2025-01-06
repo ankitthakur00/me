@@ -44,9 +44,9 @@ export async function generateSitemap(
     includeDrafts: process.env.NODE_ENV === 'development',
   });
 
-  const projects = await getAllPosts({
-    isWork: true,
-  });
+  // const projects = await getAllPosts({
+  //   isWork: true,
+  // });
 
   const filteredPosts = posts.filter((post) => {
     if (post.meta?.draft && process.env.NODE_ENV !== 'development') {
@@ -62,12 +62,12 @@ export async function generateSitemap(
     priority: 0.7,
   }));
 
-  const projectsSitemap = projects.map((project) => ({
-    url: `${baseUrl}/projects/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'yearly',
-    priority: 0.6,
-  }));
+  // const projectsSitemap = projects.map((project) => ({
+  //   url: `${baseUrl}/projects/${project.slug}`,
+  //   lastModified: new Date(),
+  //   changeFrequency: 'yearly',
+  //   priority: 0.6,
+  // }));
 
-  return [...postsSitemap, ...projectsSitemap] as MetadataRoute.Sitemap;
+  return [...postsSitemap] as MetadataRoute.Sitemap;
 }

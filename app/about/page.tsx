@@ -36,22 +36,20 @@ export default async function AboutPage() {
       <section className="pb-8 prose prose-lg prose-invert">
         <p>
           Hi there, I&apos;m Ankit. <br />
-          Building innovative solutions and collaborating with teams to bring impactful ideas to life throw end to end software development.
+          Building innovative solutions and collaborating with teams to bring impactful ideas to life through end-to-end software development.
         </p>
         <p>
-        Currenly i am working with OpenText,Engaged in the progressive advancement of features within OpenText’s Enterprise Content Manager Project, contributing to both frontend and backend development initiatives.
-
-
+          Currently I am working with OpenText, engaged in the progressive advancement of features within OpenText&apos;s Enterprise Content Manager Project, contributing to both frontend and backend development initiatives.
         </p>
 
         <p>
-          I also worked with Epsilon (A Publicis Groupe Company) for 3 years where i was part of 
-          core development team of Epsilon's internal product Epsilon Data Helath monitring tool. 
+          I also worked with Epsilon (A Publicis Groupe Company) for 3 years where I was part of the 
+          core development team of Epsilon&apos;s internal product Epsilon Data Health monitoring tool. 
           My responsibilities included building the frontend and backend for the product.
         </p>
 
         <p>
-        I've always found myself at the intersection of design and engineering, united by a single passion: creating things that people genuinely love to use.
+          I&apos;ve always found myself at the intersection of design and engineering, united by a single passion: creating things that people genuinely love to use.
         </p>
 
         <p>

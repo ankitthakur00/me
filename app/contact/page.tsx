@@ -35,8 +35,7 @@ export default async function InfoPage() {
       <section className="pb-8">
         <p className="text-lg mb-4 text-slate-300">
           If you&apos;d like to get in touch, you can reach me using the
-          following methods. Please note, that I&apos;m not currently available
-          for freelance projects.
+          following methods.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
