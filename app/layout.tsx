@@ -86,11 +86,11 @@ export default function RootLayout({
           <header className="pt-8 md:pt-16 pb-16 px-4 md:px-0 flex justify-between">
             <Link href="/">
               <Image 
-                width={64}
-                height={64}
+                width={320}
+                height={150}
                 src={getImagePath('logo2.png')}
                 alt="AK"
-                className="w-auto hover:opacity-70 transition-opacity"
+                className="w-auto h-64 hover:opacity-70 transition-opacity"
               />
             </Link>
             <nav className="flex gap-4">
