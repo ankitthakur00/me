@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
+
+const basePath = process.env.NODE_ENV === 'development' ? '' : '/me';
 const nextConfig = {
-  basePath: '/me',
+  basePath: basePath,
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   redirects: async () => {

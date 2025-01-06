@@ -7,6 +7,7 @@ import localFont from 'next/font/local';
 import { JetBrains_Mono } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Image from 'next/image';
+import nextConfig from '../next.config.mjs';
 
 import clsx from 'clsx';
 
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     creator: '@ankitthakur00',
-    images: ['/me/logo2.png'],
+    images: [`${nextConfig.basePath}/logo2.png`],
     title: 'Ankit Kumar - Software Engineer',
   },
   openGraph: {
     title: 'Ankit Kumar - Software Engineer',
     images: [
       {
-        url: '/me/logo2.png',
+        url: `${nextConfig.basePath}/logo2.png`,
         width: 1200,
         height: 630,
         alt: 'Ankit Kumar - Software Engineer',
@@ -82,17 +83,15 @@ export default function RootLayout({
       >
         <div className="max-w-2xl lg:max-w-xl mx-auto">
           <header className="pt-8 md:pt-16 pb-16 px-4 md:px-0 flex justify-between">
-            <div className="h-64 w-64">
-              <Link href="/">
-                <Image 
-                  src="/me/logo2.png" 
-                  alt="AK" 
-                  width={64}
-                  height={64}
-                  className="w-auto hover:opacity-70 transition-opacity"
-                />
-              </Link>
-            </div>
+            <Link href="/">
+              <Image 
+                src={`${nextConfig.basePath}/logo2.png`}
+                alt="AK" 
+                width={64}
+                height={64}
+                className="w-auto hover:opacity-70 transition-opacity"
+              />
+            </Link>
             <nav className="flex gap-4">
               <Link
                 href="/about"
@@ -122,7 +121,7 @@ export default function RootLayout({
           </footer>
         </div>
         <Analytics />
-        <GoogleAnalytics gaId="G-NRKQPP7M9P" />
+        <GoogleAnalytics gaId="" />
       </body>
     </html>
   );
