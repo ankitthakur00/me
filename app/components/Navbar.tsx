@@ -54,7 +54,7 @@ export function Navbar() {
                                 <a
                                     key={item.href}
                                     href={href}
-                                    download
+                                    download="Ankit_Kumar_Resume.pdf"
                                     className={clsx(
                                         'text-sm font-medium transition-colors hover:text-primary text-muted-foreground'
                                     )}
@@ -113,7 +113,7 @@ export function Navbar() {
                                     <a
                                         key={item.href}
                                         href={href}
-                                        download
+                                        download="Ankit_Kumar_Resume.pdf"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className={clsx(
                                             'text-sm font-medium transition-colors hover:text-primary text-muted-foreground'
