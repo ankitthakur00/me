@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: 'Ankit Kumar - Software Engineer',
     images: [
       {
-        url: `${nextConfig.basePath}/logo2.png`,
+        url: `${nextConfig.basePath || ''}/logo2.png`,
         width: 1200,
         height: 630,
         alt: 'Ankit Kumar - Software Engineer',
