@@ -44,21 +44,41 @@ export function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-6">
-                    {content.navigation.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            download={item.download}
-                            className={clsx(
-                                'text-sm font-medium transition-colors hover:text-primary',
-                                pathname === item.href
-                                    ? 'text-primary'
-                                    : 'text-muted-foreground'
-                            )}
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
+                    {content.navigation.map((item) => {
+                        const isDownload = 'download' in item && item.download;
+                        const basePath = process.env.NODE_ENV === 'production' ? '/me' : '';
+                        const href = isDownload ? `${basePath}${item.href}` : item.href;
+                        
+                        if (isDownload) {
+                            return (
+                                <a
+                                    key={item.href}
+                                    href={href}
+                                    download
+                                    className={clsx(
+                                        'text-sm font-medium transition-colors hover:text-primary text-muted-foreground'
+                                    )}
+                                >
+                                    {item.name}
+                                </a>
+                            );
+                        }
+
+                        return (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className={clsx(
+                                    'text-sm font-medium transition-colors hover:text-primary',
+                                    pathname === item.href
+                                        ? 'text-primary'
+                                        : 'text-muted-foreground'
+                                )}
+                            >
+                                {item.name}
+                            </Link>
+                        );
+                    })}
                     <div className="border-l border-border h-5 mx-2" />
                     <ThemeToggle />
                 </div>
@@ -83,22 +103,43 @@ export function Navbar() {
             {isMobileMenuOpen && (
                 <div className="md:hidden border-t border-border bg-background">
                     <div className="flex flex-col py-4 px-6 space-y-4">
-                        {content.navigation.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                download={item.download}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className={clsx(
-                                    'text-sm font-medium transition-colors hover:text-primary',
-                                    pathname === item.href
-                                        ? 'text-primary'
-                                        : 'text-muted-foreground'
-                                )}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
+                        {content.navigation.map((item) => {
+                            const isDownload = 'download' in item && item.download;
+                            const basePath = process.env.NODE_ENV === 'production' ? '/me' : '';
+                            const href = isDownload ? `${basePath}${item.href}` : item.href;
+
+                            if (isDownload) {
+                                return (
+                                    <a
+                                        key={item.href}
+                                        href={href}
+                                        download
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className={clsx(
+                                            'text-sm font-medium transition-colors hover:text-primary text-muted-foreground'
+                                        )}
+                                    >
+                                        {item.name}
+                                    </a>
+                                );
+                            }
+
+                            return (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={clsx(
+                                        'text-sm font-medium transition-colors hover:text-primary',
+                                        pathname === item.href
+                                            ? 'text-primary'
+                                            : 'text-muted-foreground'
+                                    )}
+                                >
+                                    {item.name}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             )}
