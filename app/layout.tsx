@@ -1,16 +1,16 @@
 import './assets/globals.css';
 
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 import localFont from 'next/font/local';
 import { JetBrains_Mono } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Image from 'next/image';
 import nextConfig from '../next.config.mjs';
 
 import clsx from 'clsx';
-import { getImagePath } from '@/lib/images';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { ThemeProvider } from './components/ThemeProvider';
 
 const SaansFont = localFont({
   src: './saans-font.woff2',
@@ -68,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -79,48 +79,16 @@ export default function RootLayout({
         className={clsx(
           SaansFont.className,
           JetBrainsMonoFont.variable,
-          'bg-slate-950 text-slate-200'
+          'bg-background text-foreground min-h-screen flex flex-col transition-colors duration-300'
         )}
       >
-        <div className="max-w-2xl lg:max-w-xl mx-auto">
-          <header className="pt-8 md:pt-16 pb-16 px-4 md:px-0 flex justify-between">
-            <Link href="/">
-              <Image 
-                width={120}
-                height={100}
-                src={getImagePath('logo2.png')}
-                alt="AK"
-                className="w-auto h-8 rounded-xl hover:opacity-70 transition-opacity"
-              />
-            </Link>
-            <nav className="flex gap-4">
-              <Link
-                href="/about"
-                className="text-slate-200 text-sm tracking-tighter font-mono font-semibold hover:text-slate-400 transition-colors"
-              >
-                CV
-              </Link>
-              <Link
-                href="/posts"
-                className="text-slate-200 text-sm tracking-tighter font-mono font-semibold hover:text-slate-400 transition-colors"
-              >
-                Blogs
-              </Link>
-              <Link
-                className="text-slate-200 text-sm tracking-tighter font-mono font-semibold hover:text-slate-400 transition-colors"
-                href="/contact"
-              >
-                Contact
-              </Link>
-            </nav>
-          </header>
-          {children}
-          <footer className="px-4 md:px-0 border-t border-slate-800 py-8 text-slate-400 font-mono text-xs tracking-tight flex justify-between">
-            <p>
-              &copy;{new Date().getFullYear()} Ankit Kumar
-            </p>
-          </footer>
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
+          <main className="flex-1 pt-16">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
         <Analytics />
         <GoogleAnalytics gaId="" />
       </body>

@@ -5,7 +5,7 @@ interface Props {
 export function PageHeader({ title }: Props) {
   return (
     <header>
-      <h1 className="font-semibold tracking-tight text-4xl mb-6 text-slate-100 pb-6 border-b border-slate-700">
+      <h1 className="font-semibold tracking-tight text-4xl mb-6 text-foreground pb-6 border-b border-border">
         {title}
       </h1>
     </header>
