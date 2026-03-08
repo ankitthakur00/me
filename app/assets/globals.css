@@ -4,34 +4,49 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%; /* #F8F9FA */
-    --foreground: 0 0% 13%; /* #202124 */
+    --background: 210 20% 98%;
+    /* #F8F9FA */
+    --foreground: 0 0% 13%;
+    /* #202124 */
 
-    --card: 210 24% 95%; /* #F1F3F4 */
-    --card-foreground: 0 0% 13%; /* #202124 */
+    --card: 210 24% 95%;
+    /* #F1F3F4 */
+    --card-foreground: 0 0% 13%;
+    /* #202124 */
 
-    --primary: 0 0% 0%; /* Black */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 0 0% 0%;
+    /* Black */
+    --primary-foreground: 0 0% 100%;
+    /* White */
 
-    --secondary: 210 24% 95%; /* #F1F3F4 */
-    --secondary-foreground: 0 0% 13%; /* #202124 */
+    --secondary: 210 24% 95%;
+    /* #F1F3F4 */
+    --secondary-foreground: 0 0% 13%;
+    /* #202124 */
 
-    --muted: 210 24% 95%; /* #F1F3F4 */
-    --muted-foreground: 217 6% 40%; /* #5F6368 */
+    --muted: 210 24% 95%;
+    /* #F1F3F4 */
+    --muted-foreground: 217 6% 40%;
+    /* #5F6368 */
 
     --accent: 210 20% 98%;
     --accent-foreground: 0 0% 13%;
 
-    --border: 214 15% 91%; /* Light Gray Border */
+    --border: 214 15% 91%;
+    /* Light Gray Border */
 
-    --radius: 2rem; /* 32px standard radius */
+    --radius: 2rem;
+    /* 32px standard radius */
   }
 
   .dark {
-    --background: 240 10% 9%; /* Lifted from 6% to 9% for a softer slate feel */
-    --foreground: 240 5% 80%; /* Softer gray foreground */
+    --background: 240 10% 9%;
+    /* Lifted from 6% to 9% for a softer slate feel */
+    --foreground: 240 5% 80%;
+    /* Softer gray foreground */
 
-    --card: 240 6% 14%; /* Adjusted to match lifted bg */
+    --card: 240 6% 14%;
+    /* Adjusted to match lifted bg */
     --card-foreground: 240 5% 80%;
 
     --primary: 0 0% 100%;
@@ -41,12 +56,14 @@
     --secondary-foreground: 240 5% 80%;
 
     --muted: 240 5% 20%;
-    --muted-foreground: 240 5% 60%; /* Slightly brighter muted text for legibility */
+    --muted-foreground: 240 5% 60%;
+    /* Slightly brighter muted text for legibility */
 
     --accent: 240 6% 20%;
     --accent-foreground: 240 5% 80%;
 
-    --border: 240 6% 22%; /* Softer border */
+    --border: 240 6% 22%;
+    /* Softer border */
   }
 }
 
@@ -56,12 +73,24 @@
     color: hsl(var(--foreground));
     /* Reduced opacity for a more subtle atmospheric feel */
     background-image: radial-gradient(circle at top, rgba(66, 133, 244, 0.03) 0%, transparent 40%),
-                      radial-gradient(circle at bottom, rgba(66, 133, 244, 0.03) 0%, transparent 40%);
+      radial-gradient(circle at bottom, rgba(66, 133, 244, 0.03) 0%, transparent 40%);
     background-attachment: fixed;
   }
-  
+
   .dark body {
     background-image: radial-gradient(circle at top, rgba(66, 133, 244, 0.08) 0%, transparent 35%),
-                      radial-gradient(circle at bottom, rgba(66, 133, 244, 0.08) 0%, transparent 35%);
+      radial-gradient(circle at bottom, rgba(66, 133, 244, 0.08) 0%, transparent 35%);
   }
+}
+
+@layer utilities {
+  .marker-highlight {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+  }
+
+
+
+
 }

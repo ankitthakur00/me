@@ -6,6 +6,7 @@ import { Button } from '@/app/components/ui/Button';
 import { Card, CardContent } from '@/app/components/ui/Card';
 import { Section } from '@/app/components/ui/Section';
 import { Bubble } from '@/app/components/Bubble';
+import { MarkerHighlight } from '@/app/components/MarkerHighlight';
 import { motion, Variants, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Briefcase, GraduationCap, Code2, Database, Cloud, Terminal } from 'lucide-react';
 import { useTheme } from 'next-themes';
@@ -138,7 +139,9 @@ export default function Home() {
               </p>
             ))}
             <p className="text-lg font-medium text-foreground">
-              {content.profile.callToAction}
+              <MarkerHighlight delay={1.2}>
+                {content.profile.callToAction}
+              </MarkerHighlight>
             </p>
           </motion.div>
 
